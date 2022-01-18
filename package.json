@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "dotenv": "^14.2.0",
+    "node-pg-migrate": "^6.2.1",
+    "pg": "^8.7.1"
+  },
+  "scripts": {
+    "bundle:dev": "node scripts/bundle.js watch",
+    "start:dev": "nodemon dist/esbuild-main.js",
+    "watch": "concurrently 'yarn:bundle:dev' 'yarn:start:dev'",
+    "migrate": "node-pg-migrate",
+    "up": "node scripts/env.js && node-pg-migrate up"
+  }
+}
